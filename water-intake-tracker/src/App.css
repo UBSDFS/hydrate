@@ -96,17 +96,22 @@ input {
 }
 
 .card {
-  margin-bottom: 16px;
-  padding: 20px;
-  border: 2px solid #222;
-  background: #fff;
+  margin-bottom: 20px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(18px);
 }
-
 .card-label {
   margin: 0 0 12px;
-  font-weight: bold;
+  color: #55e6ff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
-
 .progress-heading {
   display: flex;
   justify-content: space-between;
