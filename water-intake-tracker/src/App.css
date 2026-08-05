@@ -2,11 +2,17 @@
   box-sizing: border-box;
 }
 
+html {
+  min-height: 100%;
+}
+
 body {
+  min-width: 320px;
+  min-height: 100vh;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f5f5f5;
-  color: #222;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  background: #020817;
+  color: #f8fbff;
 }
 
 button,
@@ -15,13 +21,34 @@ input {
 }
 
 .app {
+  position: relative;
   min-height: 100vh;
-  padding: 32px 16px;
+  padding: 32px 16px 64px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(79, 70, 229, 0.35),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 10% 45%,
+      rgba(0, 217, 255, 0.16),
+      transparent 28%
+    ),
+    linear-gradient(
+      145deg,
+      #020817 0%,
+      #061532 50%,
+      #090c2d 100%
+    );
 }
 
 .app-container {
+  position: relative;
+  z-index: 1;
   width: 100%;
-  max-width: 440px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
