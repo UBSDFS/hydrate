@@ -1,20 +1,27 @@
-function ProgressCard() {
+import ProgressBar from "./ProgressBar";
+
+function ProgressCard({ currentAmount, goalAmount }) {
+    const percentage =
+        goalAmount > 0
+            ? Math.min((currentAmount / goalAmount) * 100, 100)
+            : 0;
+
     return (
-        <section className="card">
-            <p className="card-label">Daily Progress</p>
+        <section className="card progress-card">
+            <div className="progress-header">
+                <p className="card-label">Daily Progress</p>
 
-            <div className="progress-heading">
-                <h2>Current Intake</h2>
-                <span>Percentage</span>
+                <span>
+                    {currentAmount} / {goalAmount} ml
+                </span>
             </div>
 
-            <p className="goal-text">Daily Goal</p>
+            <ProgressBar //Progress bar showing the current progress toward the goal
+                currentAmount={currentAmount}
+                goalAmount={goalAmount}
+            />
 
-            <div className="progress-track">
-                <div className="progress-fill"></div>
-            </div>
-
-            <p className="progress-message">Progress Message</p>
+            <p>{Math.round(percentage)}% complete</p>
         </section>
     );
 }
