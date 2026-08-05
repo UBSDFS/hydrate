@@ -1,4 +1,4 @@
-import ButtonGroup from "./ButtonGroup";
+import ButtonGroup from "../Buttons/ButtonGroup";
 
 function WaterInputCard() {
     return (

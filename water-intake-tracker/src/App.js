@@ -2,7 +2,7 @@ import "./App.css";
 
 import Header from "./components/Header/Header";
 import ProgressCard from "./components/Progress/ProgressCard";
-import WaterInputCard from "./components/WaterInputCard";
+import WaterInputCard from "./components/WaterInput/WaterInputCard";
 
 import WeeklyChartCard from "./components/Chart/ChartCard";
 

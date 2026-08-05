@@ -146,8 +146,13 @@ input {
 .progress-fill {
   width: 62%;
   height: 100%;
-  border-right: 2px solid #222;
-  background: #ccc;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    #00d9ff,
+    #38bdf8,
+    #6366f1
+  );
 }
 
 .water-input-card label {
