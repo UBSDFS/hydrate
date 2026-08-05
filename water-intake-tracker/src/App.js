@@ -1,11 +1,11 @@
 import "./App.css";
 
-import Header from "./components/Header";
-import ProgressCard from "./components/ProgressCard";
+import Header from "./components/Header/Header";
+import ProgressCard from "./components/Progress/ProgressCard";
 import WaterInputCard from "./components/WaterInputCard";
-import ButtonGroup from "./components/ButtonGroup";
-import WeeklyChartCard from "./components/ChartCard";
-import today from "./components/HeaderDate";
+import ButtonGroup from "./components/Buttons/ButtonGroup";
+import WeeklyChartCard from "./components/Chart/ChartCard";
+import today from "./components/Header/HeaderDate";
 
 function App() {
   return (
