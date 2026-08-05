@@ -1,16 +1,15 @@
-import today from "./HeaderDate"; // Import the current date formatted as "Weekday, Month Day, Year"
+import today from "./HeaderDate";
 
 function Header() {
     return (
         <header className="app-header">
             <div>
-                <p className="top title">Daily Hydration</p>
+                <p className="header-subtitle">Daily Hydration</p>
+
                 <h1>Hydrate</h1>
 
                 <p className="header-date">{today}</p>
             </div>
-
-
         </header>
     );
 }
