@@ -4,7 +4,6 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import ProgressCard from "./components/Progress/ProgressCard";
 import WaterInputCard from "./components/WaterInput/WaterInputCard";
-
 import WeeklyChartCard from "./components/Chart/ChartCard";
 
 
@@ -48,7 +47,7 @@ function App() {
           currentAmount={currentAmount}
           goalAmount={goalAmount}
         />
-        <WaterInputCard onUndoLastEntry={handleUndoLastEntry} onAddWater={handleAddWater} onReset={handleReset} />
+        <WaterInputCard inputValue={inputValue} setInputValue={setInputValue} onUndoLastEntry={handleUndoLastEntry} onAddWater={handleAddWater} onReset={handleReset} />
         <WeeklyChartCard />
       </div>
     </main>
