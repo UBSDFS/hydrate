@@ -1,4 +1,4 @@
-function ButtonGroup() {
+function ButtonGroup({ onUndoLastEntry }) {
     return (
         <section className="button-group">
             <button className="primary-button" type="button">
@@ -6,7 +6,11 @@ function ButtonGroup() {
             </button>
 
             <div className="secondary-button-row">
-                <button className="secondary-button" type="button">
+                <button
+                    className="secondary-button"
+                    type="button"
+                    onClick={onUndoLastEntry}
+                >
                     Undo Last Entry
                 </button>
 
