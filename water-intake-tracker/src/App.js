@@ -9,6 +9,33 @@ import WeeklyChartCard from "./components/Chart/ChartCard";
 
 
 function App() {
+  const [totalWater, setTotalWater] = useState(0);
+  const [history, setHistory] = useState([]);
+  const [inputValue, setInputValue] = useState(0);
+
+  //Handlers
+  const handleAddWater = () => {
+    const amount = Number(inputValue);
+    if (amount > 0) {
+      setTotalWater((prevTotal) => prevTotal + amount);
+      setHistory((prevHistory) => [...prevHistory, amount]);
+    }
+  };
+
+  const handleUndo = () => {
+    if (history.length > 0) {
+      const lastEntry = history[history.length - 1];
+      setTotalWater((prevTotal) => prevTotal - lastEntry);
+      setHistory((prevHistory) => prevHistory.slice(0, -1));
+    }
+  };
+
+  const handleReset = () => {
+    setTotalWater(0);
+    setHistory([]);
+    setInputValue(0);
+  };
+
   const [goalAmount] = useState(2000); // static for now
 
   // keeps a running log of each logged amount, in order,
