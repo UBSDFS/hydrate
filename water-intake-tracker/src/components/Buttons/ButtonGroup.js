@@ -1,6 +1,6 @@
 import ResetButton from "./ResetButton";
 
-function ButtonGroup({ onAddWater, onUndo, onReset }{ onUndoLastEntry }) {
+function ButtonGroup({ onAddWater, onUndoLastEntry, onReset }) {
     return (
         <section className="button-group">
             <button className="primary-button" type="button" onClick={onAddWater}>
@@ -11,8 +11,7 @@ function ButtonGroup({ onAddWater, onUndo, onReset }{ onUndoLastEntry }) {
                 <button
                     className="secondary-button"
                     type="button"
-                    onClick={onUndoLastEntry}
-                 onClick={onUndo}>
+                    onClick={onUndoLastEntry}>
                     Undo Last Entry
                 </button>
                 

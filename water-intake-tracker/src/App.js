@@ -12,6 +12,9 @@ function App() {
   const [totalWater, setTotalWater] = useState(0);
   const [history, setHistory] = useState([]);
   const [inputValue, setInputValue] = useState(0);
+  const goalAmount = 2000; // Example goal amount in ml
+
+  const currentAmount = totalWater;
 
   //Handlers
   const handleAddWater = () => {
@@ -22,7 +25,7 @@ function App() {
     }
   };
 
-  const handleUndo = () => {
+  const handleUndoLastEntry = () => {
     if (history.length > 0) {
       const lastEntry = history[history.length - 1];
       setTotalWater((prevTotal) => prevTotal - lastEntry);
@@ -36,21 +39,6 @@ function App() {
     setInputValue(0);
   };
 
-  const [goalAmount] = useState(2000); // static for now
-
-  // keeps a running log of each logged amount, in order,
-  // so the last one can be pulled back off
-  const [entries, setEntries] = useState([]);
-  const [currentAmount, setCurrentAmount] = useState(500); // matches old hardcoded value
-
-  // removes the most recent entry and subtracts it from the running total
-  const handleUndoLastEntry = () => {
-    if (entries.length === 0) return;
-
-    const last = entries[entries.length - 1];
-    setEntries(entries.slice(0, -1));
-    setCurrentAmount((prev) => prev - last);
-  };
 
   return (
     <main className="app">
@@ -60,8 +48,7 @@ function App() {
           currentAmount={currentAmount}
           goalAmount={goalAmount}
         />
-        <WaterInputCard onUndoLastEntry={handleUndoLastEntry} />
-
+        <WaterInputCard onUndoLastEntry={handleUndoLastEntry} onAddWater={handleAddWater} onReset={handleReset} />
         <WeeklyChartCard />
       </div>
     </main>

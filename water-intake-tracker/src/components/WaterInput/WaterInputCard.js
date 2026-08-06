@@ -1,6 +1,6 @@
 import ButtonGroup from "../Buttons/ButtonGroup";
 
-function WaterInputCard({ onUndoLastEntry }) {
+function WaterInputCard({ onUndoLastEntry, onAddWater, onReset }) {
     return (
         <section className="card water-input-card">
             <p className="card-label">Water Intake</p>
@@ -17,7 +17,7 @@ function WaterInputCard({ onUndoLastEntry }) {
                 <span>ml</span>
             </div>
 
-            <ButtonGroup onUndoLastEntry={onUndoLastEntry} />
+            <ButtonGroup onUndoLastEntry={onUndoLastEntry} onAddWater={onAddWater} onReset={onReset} />
         </section>
     );
 }
