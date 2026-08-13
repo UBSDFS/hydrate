@@ -10,7 +10,7 @@ import WeeklyChartCard from "./components/Chart/ChartCard";
 function App() {
   const [totalWater, setTotalWater] = useState(0);
   const [history, setHistory] = useState([]);
-  const [inputValue, setInputValue] = useState(0);
+  const [inputValue, setInputValue] = useState(""); // was 0 — caused the "0100" typing bug
   const goalAmount = 2000; // Example goal amount in ml
 
   const currentAmount = totalWater;
@@ -35,7 +35,7 @@ function App() {
   const handleReset = () => {
     setTotalWater(0);
     setHistory([]);
-    setInputValue(0);
+    setInputValue(""); // was 0
   };
 
 
