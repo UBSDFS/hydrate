@@ -38,18 +38,38 @@ const handleAddWater = () => {
 };
 
   const handleUndoLastEntry = () => {
-    if (history.length > 0) {
-      const lastEntry = history[history.length - 1];
-      setTotalWater((prevTotal) => prevTotal - lastEntry);
-      setHistory((prevHistory) => prevHistory.slice(0, -1));
-    }
-  };
+  if (history.length > 0) {
+    const lastEntry = history[history.length - 1];
+    const today = new Date().getDay();
 
-  const handleReset = () => {
-    setTotalWater(0);
-    setHistory([]);
-    setInputValue(""); // was 0
-  };
+    setTotalWater((prevTotal) => prevTotal - lastEntry);
+
+    setHistory((prevHistory) => prevHistory.slice(0, -1));
+
+    setWeeklyData((prevData) =>
+      prevData.map((entry, index) =>
+        index === today
+          ? { ...entry, water: Math.max(0, entry.water - lastEntry) }
+          : entry
+      )
+    );
+  }
+};
+const handleReset = () => {
+  const today = new Date().getDay();
+
+  setTotalWater(0);
+  setHistory([]);
+  setInputValue("");
+
+  setWeeklyData((prevData) =>
+    prevData.map((entry, index) =>
+      index === today
+        ? { ...entry, water: 0 }
+        : entry
+    )
+  );
+};
 
 const [weeklyData, setWeeklyData] = useState([
   { day: "Sun", water: 0 },
