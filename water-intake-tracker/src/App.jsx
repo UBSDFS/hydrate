@@ -17,13 +17,25 @@ function App() {
   const currentAmount = totalWater;
 
   //Handlers
-  const handleAddWater = () => {
-    const amount = Number(inputValue);
-    if (amount > 0) {
-      setTotalWater((prevTotal) => prevTotal + amount);
-      setHistory((prevHistory) => [...prevHistory, amount]);
-    }
-  };
+const handleAddWater = () => {
+  const amount = Number(inputValue);
+
+  if (amount > 0) {
+    const today = new Date().getDay();
+
+    setTotalWater((prevTotal) => prevTotal + amount);
+
+    setHistory((prevHistory) => [...prevHistory, amount]);
+
+    setWeeklyData((prevData) =>
+      prevData.map((entry, index) =>
+        index === today
+          ? { ...entry, water: entry.water + amount }
+          : entry
+      )
+    );
+  }
+};
 
   const handleUndoLastEntry = () => {
     if (history.length > 0) {
