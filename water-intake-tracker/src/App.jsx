@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import ProgressCard from "./components/Progress/ProgressCard";
 import WaterInputCard from "./components/WaterInput/WaterInputCard";
 import WeeklyChartCard from "./components/Chart/ChartCard";
+import ChartCard from "./components/Chart/ChartCard";
 
 
 function App() {
@@ -38,7 +39,15 @@ function App() {
     setInputValue(""); // was 0
   };
 
-
+const [weeklyData, setWeeklyData] = useState([
+  { day: "Sun", water: 0 },
+  { day: "Mon", water: 0 },
+  { day: "Tue", water: 0 },
+  { day: "Wed", water: 0 },
+  { day: "Thu", water: 0 },
+  { day: "Fri", water: 0 },
+  { day: "Sat", water: 0 }
+]);
   return (
     <main className="app">
       <div className="app-container">
@@ -48,7 +57,7 @@ function App() {
           goalAmount={goalAmount}
         />
         <WaterInputCard inputValue={inputValue} setInputValue={setInputValue} onUndoLastEntry={handleUndoLastEntry} onAddWater={handleAddWater} onReset={handleReset} />
-        <WeeklyChartCard />
+        <ChartCard data={weeklyData} />
       </div>
     </main>
   );

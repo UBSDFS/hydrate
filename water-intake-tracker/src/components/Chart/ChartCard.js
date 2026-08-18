@@ -1,4 +1,13 @@
-function ChartCard() {
+import {
+    BarChart,
+    Bar,
+    XAxis,
+    YAxis,
+    Tooltip,
+    ResponsiveContainer
+} from "recharts";
+
+function ChartCard({ data }) {
     return (
         <section className="card chart-card">
             <div className="chart-header">
@@ -10,26 +19,15 @@ function ChartCard() {
                 <span className="chart-range">Last 7 days</span>
             </div>
 
-            <div className="chart-placeholder">
-                <div className="placeholder-bars">
-                    <span className="bar bar-one"></span>
-                    <span className="bar bar-two"></span>
-                    <span className="bar bar-three"></span>
-                    <span className="bar bar-four"></span>
-                    <span className="bar bar-five"></span>
-                    <span className="bar bar-six"></span>
-                    <span className="bar bar-seven"></span>
-                </div>
-
-                <div className="chart-days">
-                    <span>Mon</span>
-                    <span>Tue</span>
-                    <span>Wed</span>
-                    <span>Thu</span>
-                    <span>Fri</span>
-                    <span>Sat</span>
-                    <span>Sun</span>
-                </div>
+            <div className="chart-container">
+                <ResponsiveContainer width="100%" height={250}>
+                    <BarChart data={data}>
+                        <XAxis dataKey="day" />
+                        <YAxis />
+                        <Tooltip />
+                        <Bar dataKey="water" />
+                    </BarChart>
+                </ResponsiveContainer>
             </div>
         </section>
     );
