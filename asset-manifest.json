@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/hydrate/static/css/main.cc0a2362.css",
+    "main.js": "/hydrate/static/js/main.5bb85949.js",
+    "static/js/453.a0b6ef79.chunk.js": "/hydrate/static/js/453.a0b6ef79.chunk.js",
+    "index.html": "/hydrate/index.html",
+    "main.cc0a2362.css.map": "/hydrate/static/css/main.cc0a2362.css.map",
+    "main.5bb85949.js.map": "/hydrate/static/js/main.5bb85949.js.map",
+    "453.a0b6ef79.chunk.js.map": "/hydrate/static/js/453.a0b6ef79.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cc0a2362.css",
+    "static/js/main.5bb85949.js"
+  ]
+}
